@@ -1,0 +1,25 @@
+spring.jpa.database-platform: org.hibernate.dialect.PostgreSQL94Dialect
+
+
+spring:
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: "jdbc:postgresql://localhost:6543/car_rental"
+    username: "postgres"
+    password: "root"
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 8050
+camunda:
+  bpm:
+    client:
+      base-url: http://localhost:8070/engine-rest
+      basic-auth:
+#        password: admin
+#        username: admin
+        password: c1b21682-a9cc-472a-a481-51fa7ae3ff5a
+        username: car_rental_java_worker

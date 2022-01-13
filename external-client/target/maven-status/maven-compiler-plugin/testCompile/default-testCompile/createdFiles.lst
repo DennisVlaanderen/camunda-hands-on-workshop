@@ -1,0 +1,13 @@
+com\han\oose\rental\resources\external_tasks\CheckCarAvailableExTaskTest.class
+com\han\oose\rental\domain\handlers\delegates\GetRenterInformationHandlerTest.class
+com\han\oose\rental\domain\handlers\delegates\SaveRenterInformationHandlerTest.class
+com\han\oose\rental\resources\external_tasks\SendRequestForDriverLicenseExTaskTest.class
+com\han\oose\rental\resources\external_tasks\CheckCategoriesExTaskTest.class
+com\han\oose\rental\domain\handlers\delegates\CheckCarCategoriesHandlerImplTest.class
+com\han\oose\rental\resources\external_tasks\GetRenterInformationExTaskTest.class
+com\han\oose\rental\data\services\CarServiceImplTest.class
+com\han\oose\rental\domain\handlers\delegates\CheckCarAvailableHandlerTest.class
+com\han\oose\rental\resources\external_tasks\SendConfirmationExTaskTest.class
+com\han\oose\rental\data\services\UserServiceImplTest.class
+com\han\oose\rental\resources\external_tasks\SaveRenterInformationExTaskTest.class
+com\han\oose\rental\domain\exceptions\LogicResponseExceptionHandlerTest.class
