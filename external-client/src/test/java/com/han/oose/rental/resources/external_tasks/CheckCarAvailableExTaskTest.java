@@ -1,7 +1,5 @@
 package com.han.oose.rental.resources.external_tasks;
 
-import com.han.oose.rental.domain.handlers.delegates.CheckCarAvailableHandlerImpl;
-import com.han.oose.rental.domain.handlers.delegates.CheckCarAvailableHandlerTest;
 import com.han.oose.rental.resources.interfaces.CheckCarAvailableHandler;
 import com.han.oose.rental.resources.variables.CarRentalProcessVariables;
 import org.camunda.bpm.client.task.ExternalTask;
@@ -10,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.mockito.Mockito.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class CheckCarAvailableExTaskTest {
 

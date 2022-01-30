@@ -1,4 +1,4 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.User;
 import com.han.oose.rental.domain.interfaces.UserService;
@@ -18,6 +18,7 @@ public class SaveRenterInformationHandlerImpl implements SaveRenterInformationHa
     public void saveRenterInformation(int userId, Long birthday, Long driversLicenseObtained) {
         Optional<User> userOpt = userService.findById(userId);
 
+        // Update existing user with new data
         if (userOpt.isPresent()) {
             User user = userOpt.get();
             user.setDateOfBirth(birthday);

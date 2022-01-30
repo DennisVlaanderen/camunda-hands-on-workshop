@@ -1,4 +1,4 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.Car;
 import com.han.oose.rental.domain.interfaces.CarService;
@@ -19,26 +19,21 @@ public class CheckCarCategoriesHandlerImpl implements CheckCarCategoriesHandler 
 
     @Override
     public boolean isAllowedToRentCar(Long carId, String userCarCat) {
-        boolean allowedToRentCar;
+        boolean allowedToRentCar = false;
 
         Optional<Car> result = carService.findById(carId);
         Car car = result.orElse(null);
-        assert car != null;
-        String carCategory = car.getCategory();
+        if (car != null) {
+            String carCategory = car.getCategory();
 
-        // https://stackoverflow.com/questions/15027231/java-how-to-convert-letters-in-a-string-to-a-number
-        switch (userCarCat) {
-            case CAR_CATEGORY_A:
+            // Determine rental categories based on a user's allowed categories compared to the car requested
+            if (CAR_CATEGORY_A.equals(userCarCat)) {
                 allowedToRentCar = true;
-                break;
-            case CAR_CATEGORY_B:
+            } else if (CAR_CATEGORY_B.equals(userCarCat)) {
                 allowedToRentCar = carCategory.equals(CAR_CATEGORY_B) || carCategory.equals(CAR_CATEGORY_C);
-                break;
-            case CAR_CATEGORY_C:
+            } else if (CAR_CATEGORY_C.equals(userCarCat)) {
                 allowedToRentCar = carCategory.equals(CAR_CATEGORY_C);
-                break;
-            default:
-                allowedToRentCar = false;
+            }
         }
         return allowedToRentCar;
     }

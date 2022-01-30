@@ -1,14 +1,10 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.Car;
 import com.han.oose.rental.data.repositories.CarRepository;
 import com.han.oose.rental.domain.interfaces.CarService;
-import com.han.oose.rental.resources.interfaces.CheckCarCategoriesHandler;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Objects;
 import java.util.Optional;
