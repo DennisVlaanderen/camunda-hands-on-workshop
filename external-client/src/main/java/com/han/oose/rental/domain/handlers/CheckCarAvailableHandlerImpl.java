@@ -1,4 +1,4 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.Car;
 import com.han.oose.rental.data.Contract;
@@ -23,12 +23,14 @@ public class CheckCarAvailableHandlerImpl implements CheckCarAvailableHandler {
 
     @Override
     public boolean checkCarAvailable(int carId, int rentPeriod) {
+        // Find car for given ID
         Optional<Car> car = carService.findById(carId);
         boolean isAvailable = false;
 
         if (car.isPresent()) {
             Date rentalStartDate = Date.valueOf(LocalDate.now());
             List<Contract> contractList = car.get().getContracts();
+            // Check if the car has any contracts with overlapping dates
             List<Contract> inUseContracts = contractList.stream()
                     .filter(contract -> dateIsTaken(rentalStartDate, contract, rentPeriod))
                     .collect(Collectors.toList());

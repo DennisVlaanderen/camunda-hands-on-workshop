@@ -1,14 +1,12 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.Car;
 import com.han.oose.rental.data.Contract;
-import com.han.oose.rental.data.User;
 import com.han.oose.rental.domain.interfaces.CarService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Date;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;

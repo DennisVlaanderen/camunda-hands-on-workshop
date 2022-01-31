@@ -1,4 +1,4 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.User;
 import com.han.oose.rental.domain.interfaces.UserService;
@@ -24,6 +24,7 @@ public class GetRenterInformationHandlerImpl implements GetRenterInformationHand
         if(user.isPresent()) {
             boolean isUserVerified = user.get().isVerified();
 
+            // Check if user is verified to set Date variables to prevent null-initialization for process variables.
             renterPOJO.setVerified(isUserVerified);
             if (isUserVerified) {
                 Long dateOfBirth = user.get().getDateOfBirth();

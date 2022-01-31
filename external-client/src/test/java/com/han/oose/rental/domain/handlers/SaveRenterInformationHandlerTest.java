@@ -1,4 +1,4 @@
-package com.han.oose.rental.domain.handlers.delegates;
+package com.han.oose.rental.domain.handlers;
 
 import com.han.oose.rental.data.Contract;
 import com.han.oose.rental.data.User;
