@@ -1,0 +1,24 @@
+-Introductie
+	-Voorstellen
+	-Opdracht van JDI
+-Algemeen
+	-Wat is Camunda
+		-'Universal Process Orchestrator' (Zin van Camunda website)
+		-(BPMN-)Workflow Automatisering (Uitleg van voorgaande slide)
+		-Niet één app. 'A complete process automation tech stack'
+			-Cloud (Niet mee gewerkt, kort noemen)
+			-Platform
+				-Afbeelding met onderdelen
+					-Toelichting per onderdeel
+-Car-rental
+	-BPMN-Schema
+	-Architectuur
+		-Standalone engine
+			-REST-API
+		-Andere opties
+		-Splitsen van databases
+	-Security
+		-Rollen & Rechten
+		-Keycloak
+	-Workflowtests
+-Samenvatten
