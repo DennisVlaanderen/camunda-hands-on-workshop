@@ -1,0 +1,17 @@
+spring.datasource.url: jdbc:h2:file:./camunda-h2-database
+
+camunda.bpm.admin-user:
+  id: brooks
+  password: Cepwan-muxbex-6pijmo
+
+
+#plugin.identity.keycloak:
+#    keycloakIssuerUrl: http://keycloak:8080/auth/realms/camunda
+#    keycloakAdminUrl: http://keycloak:8080/auth/admin/realms/camunda
+#  keycloakIssuerUrl: http://localhost:8080/auth/realms/camunda
+#  keycloakAdminUrl: http://localhost:8080/auth/admin/realms/camunda
+#  clientId: camunda-identity-service
+#  #  TODO: put clientSecret in environment variable file
+#  clientSecret: fabaaf86-bfb5-4b89-8019-91703c2aeed5
+#  useUsernameAsCamundaUserId: true
+#  administratorGroupName: camunda-admins
