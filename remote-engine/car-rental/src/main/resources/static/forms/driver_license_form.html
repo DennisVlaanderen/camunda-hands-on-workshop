@@ -1,0 +1,110 @@
+<form role="form">
+    <div>
+        <h1>Drivers License Review UPDATE</h1>
+        <Image src="{{imgUrl}}" style="width: 350px; object-fit: contain"></Image>
+    </div>
+
+    <br>
+
+    <div>
+        <input
+                id="userIsAccepted"
+                type="checkbox"
+                cam-variable-name="user_is_verified"
+                cam-variable-type="Boolean"/>
+        <label for="userIsAccepted">Is Drivers License Accepted?</label>
+    </div>
+
+    <br>
+
+    <label for="userAgeDateField">Date of birth</label>
+    <p id="userAgeDateField" class="input-group">
+        <input type="text"
+               cam-variable-name="birthday"
+               cam-variable-type="Date"
+               class="form-control"
+               uib-datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+               is-open="userAgeDateFieldOpened"/>
+
+
+        <span class="input-group-btn">
+            <button type="button"
+                    class="btn btn-default"
+                    ng-click="openUserAge($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+    </p>
+
+    <br>
+
+    <label for="driversLicenseAgeDateField">Driver license received</label>
+    <p id="driversLicenseAgeDateField" class="input-group">
+        <input type="text"
+               cam-variable-name="drivers_license_obtained"
+               cam-variable-type="Date"
+               class="form-control"
+               uib-datepicker-popup="yyyy-MM-dd'T'HH:mm:ss"
+               is-open="driversLicenseAgeDateFieldOpened"/>
+
+
+        <span class="input-group-btn">
+            <button type="button"
+                    class="btn btn-default"
+                    ng-click="openDriversLicenseAge($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+        </span>
+    </p>
+
+    <br><br>
+
+    <script cam-script type="text/form-script">
+      camForm.on("form-loaded", function() {
+            camForm.variableManager.fetchVariable("img_url");
+      });
+
+      camForm.on("variables-fetched", function() {
+          $scope.imgUrl = camForm.variableManager.variable("img_url").value;
+      });
+
+      $scope.openDriversLicenseAge = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.driversLicenseAgeDateFieldOpened = true;
+      };
+
+      $scope.openUserAge = function($event) {
+        $event.preventDefault();
+        $event.stopPropagation();
+
+        $scope.userAgeDateFieldOpened = true;
+      };
+
+      camForm.on('submit', function() {
+      // this callback is executed when the form is submitted, *before* the submit request to
+      // the server is executed
+
+            const calculatedAge = new Date().getFullYear() - new Date($scope.birthday).getFullYear()
+            const calculatedLicenseAge = new Date().getFullYear() - new Date($scope.drivers_license_obtained).getFullYear()
+
+            console.log("age: ", calculatedAge, " | license age: ", calculatedLicenseAge)
+
+          // creating a new variable will add it to the form submit
+          camForm.variableManager.createVariable({
+            name: 'age',
+            type: 'Integer',
+            value: calculatedAge,
+            isDirty: true
+          });
+
+          camForm.variableManager.createVariable({
+            name: 'driver_license_age',
+            type: 'Integer',
+            value: calculatedLicenseAge,
+            isDirty: true
+          });
+      });
+    </script>
+</form>

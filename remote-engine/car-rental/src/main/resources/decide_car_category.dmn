@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="decide_car_category_file" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="decide_car_category" name="Decide Car Category">
+    <decisionTable id="DecisionTable_1pw5tus" hitPolicy="FIRST">
+      <input id="InputClause_0fi3u36" label="driver_license_age" biodi:width="192" camunda:inputVariable="driver_license_age">
+        <inputExpression id="LiteralExpression_1sk2jzj" typeRef="integer">
+          <text></text>
+        </inputExpression>
+      </input>
+      <input id="Input_1" label="age" camunda:inputVariable="age">
+        <inputExpression id="InputExpression_1" typeRef="integer" expressionLanguage="feel">
+          <text></text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="car_category" name="car_category" typeRef="string" />
+      <rule id="DecisionRule_15s5mlb">
+        <inputEntry id="UnaryTests_0admmqk">
+          <text>[2..4]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11fx9n0">
+          <text>[20..24]</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0pqwas8">
+          <text>"C"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1981r7l">
+        <inputEntry id="UnaryTests_0ouvgzb">
+          <text>[2..4]</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04973wk">
+          <text>&gt; 24</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_192fni1">
+          <text>"B"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ls2v3u">
+        <inputEntry id="UnaryTests_0vwt5rx">
+          <text>&gt;= 5</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qwmext">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0swzoly">
+          <text>"A"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="decide_car_category">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
