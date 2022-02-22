@@ -4,7 +4,7 @@ services:
   postgres:
     build: ./postgres
     ports:
-      - 6543:5432
+      - "6543:5432"
     restart: always
     environment:
       POSTGRES_PASSWORD: root
@@ -30,4 +30,4 @@ services:
     depends_on:
       - postgres
     ports:
-      - 8070:8070
+      - "8070:8070"

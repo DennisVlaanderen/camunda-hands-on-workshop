@@ -21,18 +21,59 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
-SET search_path TO car_rental;
+
+\c 'car_rental'
 
 --
 -- TOC entry 3322 (class 0 OID 17271)
 -- Dependencies: 210
 -- Data for Name: cars; Type: TABLE DATA; Schema: public; Owner: postgres
 --
+CREATE SEQUENCE IF NOT EXISTS cars_id_seq;
+
+
+
+-- Table Definition
+CREATE TABLE "public"."cars" (
+                                 "id" int8 NOT NULL DEFAULT nextval('cars_id_seq'::regclass),
+                                 "category" varchar(255),
+                                 "license_plate" varchar(255),
+                                 "price_day" float8,
+                                 PRIMARY KEY ("id")
+);
+
+CREATE SEQUENCE IF NOT EXISTS users_id_seq;
+
+-- Table Definition
+CREATE TABLE "public"."users" (
+                                  "id" int8 NOT NULL DEFAULT nextval('users_id_seq'::regclass),
+                                  "date_of_birth" date,
+                                  "drivers_license_obtained" date,
+                                  "mail" varchar(255),
+                                  "password" varchar(255),
+                                  "is_verified" bool,
+                                  PRIMARY KEY ("id")
+);
 
 INSERT INTO public.cars (id, category, license_plate, price_day) VALUES (1, 'A', 'JT487Z', 80);
 INSERT INTO public.cars (id, category, license_plate, price_day) VALUES (2, 'B', 'NX698L', 50);
 INSERT INTO public.cars (id, category, license_plate, price_day) VALUES (3, 'C', '68LBVN', 30);
 
+CREATE SEQUENCE IF NOT EXISTS contract_rental_id_seq;
+
+
+
+-- Table Definition
+CREATE TABLE "public"."contract" (
+                                     "rental_id" int8 NOT NULL DEFAULT nextval('contract_rental_id_seq'::regclass),
+                                     "end_date" date,
+                                     "start_date" date,
+                                     "car_id" int8,
+                                     "user_id" int8,
+                                     CONSTRAINT "fk3w01xjalmtdxi300dxxa0o0l7" FOREIGN KEY ("car_id") REFERENCES "public"."cars"("id"),
+                                     CONSTRAINT "fki6rphdb5rpnqnrp5twyk83jao" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id"),
+                                     PRIMARY KEY ("rental_id")
+);
 
 --
 -- TOC entry 3326 (class 0 OID 17287)

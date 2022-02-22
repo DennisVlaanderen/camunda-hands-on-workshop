@@ -1,4 +1,4 @@
-package oose.brooks.config;
+// package oose.brooks.config;
 //
 // Example config for Keycloak coupling using the KeyCloak Identity Prover Community Plugin.
 // Source: https://github.com/camunda-community-hub/camunda-bpm-identity-keycloak

@@ -18,7 +18,7 @@ public class Car {
     @Column(name = "price_day")
     private double priceDay;
 
-    @OneToMany(mappedBy = "car")
+    @OneToMany(mappedBy = "car", fetch = FetchType.EAGER)
     private List<Contract> contracts;
 
     public Car() {
