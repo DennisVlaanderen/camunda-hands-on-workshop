@@ -19,7 +19,17 @@ The repository contains Docker build-files to set up and run an initial version 
 
 ## Setup guide
 
-Todo
+To setup the repository for the workshop there are a few extra steps needed to initialize the engine and database.
+Ensure Docker is installed and the engine is running.
+From the root directory of the repository execute the following steps:
+
+```shell
+> cd remote-engine
+> git-compose up --build
+```
+
+After these steps the engine should be up and running with a PostgreSQL database containing some test-data.
+In order the get the engine fully operational navigate to `localhost:8070` using your browser and follow the initialisation steps provided by the Camunda engine.
 
 ## Provided documentation
 
