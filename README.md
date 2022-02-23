@@ -29,7 +29,7 @@ From the root directory of the repository execute the following steps:
 ```
 
 After these steps the engine should be up and running with a PostgreSQL database containing some test-data.
-In order the get the engine fully operational navigate to `localhost:8070` using your browser and follow the initialisation steps provided by the Camunda engine.
+In order the get the engine fully operational navigate to `localhost:8070` using your browser and follow the initialisation steps provided by the Camunda engine. For the credentials we advice to use something simple like: username root, password root.
 
 ## Provided documentation
 
