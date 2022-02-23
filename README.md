@@ -25,7 +25,7 @@ From the root directory of the repository execute the following steps:
 
 ```shell
 > cd remote-engine
-> git-compose up --build
+> docker-compose up --build
 ```
 
 After these steps the engine should be up and running with a PostgreSQL database containing some test-data.
