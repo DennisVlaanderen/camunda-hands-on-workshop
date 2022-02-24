@@ -1,0 +1,20 @@
+{
+  "variables": {
+    "user_id": {
+      "value": 1,
+      "type": "Integer"
+    },
+    "email": {
+      "value": "test@icloud.com",
+      "type": "String"
+    },
+    "car_id": {
+      "value": 2,
+      "type": "Integer"
+    },
+    "rental_period": {
+      "value": 8,
+      "type": "Integer"
+    }
+  }
+}

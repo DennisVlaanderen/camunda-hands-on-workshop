@@ -1,0 +1,11 @@
+Send start process request:
+
+Used for happy-path.json and unverified.json
+
+http://localhost:8070/engine-rest/process-definition/key/car-rental/start/
+
+Send message request:
+
+Used for send-message.json
+
+http://localhost:8070/engine-rest/message

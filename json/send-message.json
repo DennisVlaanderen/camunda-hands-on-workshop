@@ -1,0 +1,10 @@
+{
+  "messageName": "receivedDriversLicenseMessageId",
+  "processInstanceId": <instance_id>,
+  "processVariables": {
+      "img_url": {
+          "value": "https://bynco.com/globalassets/blogs/convert-driving-license/exchange-foreign-driving-license-to-dutch-license.jpg",
+          "type": "String"
+      }
+  }
+}
